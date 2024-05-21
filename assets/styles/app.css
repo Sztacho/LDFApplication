@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.background-image {
+    position: relative;
+    min-height: 100vh;
+    background: url('../images/smokbeztła.png') no-repeat bottom right;
+    background-size: 400px auto;
+}
+
+
+@media (max-width: 768px) {
+    .background-image {
+        background-size: 200px auto;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content {
+    flex: 1;
+}
+
+.medieval-font {
+    font-family: "MedievalSharp", cursive !important;
+    text-shadow: 0 0 15px #00af93;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 10px rgb(0, 175, 147);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 175, 147);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 175, 147);
+    }
+}
+
