@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">
     <link rel="icon" href="{{ asset('images/smokbeztła.png') }}"
     {% block stylesheets %}{% endblock %}
+    {% block meta %}
+        <meta name="description" content="Lubelskie Dni Fantastyki to najstarsza impreza fantastyczna w Lublinie. Sprawdź program, atrakcje i dołącz do nas!">
+        <meta name="keywords" content="Lubelskie Dni Fantastyki, Lublin, fantastyka, konwent, prelekcje, gry planszowe, RPG, konkursy, fantastyczne wydarzenia">
+        <meta name="author" content="Federacja Fantastyki Feniks">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ app.request.uri }}">
+        <meta property="og:title" content="Lubelskie Dni Fantastyki 2024">
+        <meta property="og:description" content="Lubelskie Dni Fantastyki to najstarsza impreza fantastyczna w Lublinie. Sprawdź program, atrakcje i dołącz do nas!">
+        <meta property="og:image" content="{{ asset('images/smokbeztła.png') }}">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="{{ app.request.uri }}">
+        <meta property="twitter:title" content="Lubelskie Dni Fantastyki 2024">
+        <meta property="twitter:description" content="Lubelskie Dni Fantastyki to najstarsza impreza fantastyczna w Lublinie. Sprawdź program, atrakcje i dołącz do nas!">
+        <meta property="twitter:image" content="{{ asset('images/smokbeztła.png') }}">
+    {% endblock %}
 </head>
 <body>
 <div class="wrapper">
