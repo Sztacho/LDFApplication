@@ -171,4 +171,22 @@ class PostRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function getLatestPosts(int $limit = 6): array
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.id, p.title, p.content, pr.guid as thumbnail')
+            ->innerJoin(User::class, 'u', 'WITH', 'p.author = u.id')
+            ->leftJoin(PostMeta::class, 'pm', 'WITH', 'p.id = pm.postId AND pm.metaKey = :meta_key')
+            ->leftJoin(Post::class, 'pr', 'WITH', 'pr.id = pm.value')
+            ->andWhere('p.status = :status')
+            ->andWhere('p.type = :type')
+            ->setParameter('status', 'publish')
+            ->setParameter('meta_key', '_thumbnail_id')
+            ->setParameter('type', 'post')
+            ->orderBy('p.createdAt', 'DESC')
+            ->setMaxResults($limit);
+
+        return $qb->getQuery()->getResult();
+    }
 }

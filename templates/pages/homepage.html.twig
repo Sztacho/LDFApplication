@@ -4,155 +4,55 @@
 
 {% block body %}
     <div class="container mx-auto px-4 py-8 mt-16">
-        <div class="mb-12 hero">
+        <!-- Hero Section -->
+        <div class="hero bg-cover bg-center text-white py-32 rounded-2xl">
             <div class="hero-content text-center">
-                <div class="">
-                    <h1 class="text-5xl font-bold medieval-font uppercase">Lubelskie dni Fantastyki 2024</h1>
-                </div>
+                <h1 class="text-6xl font-bold medieval-font uppercase">Lubelskie dni Fantastyki 2024</h1>
+                <p class="mt-6 text-xl">Serdecznie zapraszamy na najstarszą imprezę fantastyczną po tej stronie Wisły! W programie: prelekcje, panele dyskusyjne, gry i wiele innych atrakcji!</p>
             </div>
         </div>
 
-        <div class="w-full mb-12 bg-base-200 rounded-xl">
-            <h3 class="text-2xl text-center">Wydarzenie rozpocznie się za</h3>
-            <div class="grid grid-flow-col gap-5 text-center auto-cols-max justify-center">
-                <div class="flex flex-col">
-                    <span class="countdown font-mono text-5xl">
-                      <span style="--value:15;"></span>
-                    </span>
-                    Dni
+        <!-- About Section -->
+        <div id="about" class="bg-base-300 rounded-lg shadow-lg p-8 mt-16">
+            <h2 class="text-3xl font-bold medieval-font text-center">O imprezie</h2>
+            <p class="mt-4 text-lg leading-relaxed">Lubelskie Dni Fantastyki to najstarsza impreza o tematyce związanej z szeroko pojętą fantastyką po tej stronie Wisły. Była organizowana rokrocznie w Lublinie od 1988 roku do 2019 r. Później przyszła pandemia i zaorała kulturę. Teraz po pięciu latach przerwy reaktywujemy imprezę!</p>
+            <p class="mt-4 text-lg leading-relaxed">W programie będzie można znaleźć: prelekcje, panele dyskusyjne, gry fabularne, planszowe, karciane, bitewne, konkursy, spotkania z twórcami. LDF-y to impreza lokalna, tworzona przez lubelskich fanów dla miłośników fantastyki z miasta i regionu. Przyjdź i rozwijaj swoje fantastyczne pasje! Serdecznie zapraszamy!!!</p>
+        </div>
+
+        <!-- Time and Place Section -->
+        <div id="time-and-place" class="rounded-lg shadow-lg p-8 mt-16 text-center">
+            <h2 class="text-3xl font-bold medieval-font">Czas i miejsce</h2>
+            <p class="mt-4 text-lg">15-16 czerwca 2024 r.</p>
+            <div class="flex justify-center mt-4 space-x-8">
+                <div>
+                    <h3 class="text-2xl font-semibold">Sobota</h3>
+                    <p class="text-lg">Godz. 9.45 – 20.00</p>
                 </div>
-                <div class="flex flex-col">
-                    <span class="countdown font-mono text-5xl">
-                      <span style="--value:10;"></span>
-                    </span>
-                    Godzin
+                <div>
+                    <h3 class="text-2xl font-semibold">Niedziela</h3>
+                    <p class="text-lg">Godz. 10.00 – 20.00</p>
                 </div>
-                <div class="flex flex-col">
-                    <span class="countdown font-mono text-5xl">
-                      <span style="--value:24;"></span>
-                    </span>
-                    Min
-                </div>
-                <div class="flex flex-col">
-                    <span class="countdown font-mono text-5xl">
-                      <span style="--value:54;"></span>
-                    </span>
-                    Sec
-                </div>
+            </div>
+            <p class="mt-4 text-lg">Dom Kultury LSM, ul. K. Wallenroda 4d, 20-607 Lublin</p>
+            <p class="mt-2 text-lg font-bold">Wstęp wolny!</p>
+        </div>
+
+        <!-- Program Section -->
+        <div id="program" class="rounded-lg shadow-lg p-8 mt-16">
+            <h2 class="text-3xl font-bold medieval-font text-center">Program</h2>
+            <p class="mt-4 text-lg leading-relaxed">Na program złożą się dwie nitki programowe w salach prelekcyjnych oraz przestrzeń do grania, czyli games room. Łącznie odbędzie się blisko 60 punktów programu.</p>
+            <p class="mt-2 text-lg leading-relaxed">W programie znajdziesz: ciekawe prelekcje popularnonaukowe, panele dyskusyjne, spotkania autorskie z twórcami literatury fantastycznej oraz konkursy tematyczne z nagrodami rzeczowymi. W games roomie odbędzie się szereg turniejów, pokazy i nauka gier karcianych i bitewnych, gry planszowe oraz sesje RPG. Na miejscu będzie możliwość wypożyczenia gier spośród kilkuset dostępnych egzemplarzy. Games room będzie czynny przez cały czas trwania imprezy.</p>
+        </div>
+
+        <!-- Partners Section -->
+        <div id="partners" class="bg-base-300 rounded-lg shadow-lg p-8 mt-16 text-center">
+            <h2 class="text-3xl font-bold medieval-font">Partnerzy</h2>
+            <div class="mt-4 flex justify-around text-center items-center">
+                <img src="http://www.domkulturylsm.pl/wp-content/uploads/2014/05/DK-LSM_logo.jpg" alt="Dom Kultury LSM" class="h-16 mx-4" loading="lazy">
+                <img src="https://www.festiwalfalkon.pl/images/logo_po_innej.png" alt="Fundacja Po Innej Stronie Mocy" class="h-16 mx-4"  loading="lazy">
+                <img src="https://paradoks.net.pl/images/logo2.png" alt="Serwis Paradoks" class="h-16 mx-4"  loading="lazy">
             </div>
         </div>
 
-        <!-- Lista kategorii -->
-        <div class="mb-12 p-6 bg-base-200 rounded-lg shadow-md text-center">
-            <h2 class="text-3xl font-semibold mb-4">Bloki tematyczne</h2>
-            <div class="flex flex-wrap gap-4 justify-center">
-                {% for category in categories %}
-                    <div class="badge badge-outline rounded-b badge-lg p-3 hover:badge-accent hover:badge-outline">
-                        <a href="" class="text-lg p-2">{{ category.name }}</a>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-
-        <!-- Najnowsze Artykuły -->
-        <div class="mb-12 p-6 bg-base-200 rounded-lg shadow-md">
-            <h2 class="text-3xl font-semibold mb-4">Aktualności</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {% for article in articles %}
-                    <div class="card shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <figure class="relative">
-                            <img src="{{ article.image }}" alt="{{ article.title }}" class="w-full h-48 object-cover rounded-t-lg">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-t-lg"></div>
-                            <div class="absolute bottom-2 left-2 text-white text-xl font-bold">{{ article.title }}</div>
-                        </figure>
-                        <div class="card-body p-4">
-                            <p class="text-gray-700 mb-4">{{ article.excerpt }}</p>
-                            <div class="card-actions justify-end">
-                                <a href="" class="btn btn-outline btn-sm">
-                                    Czytaj więcej
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-
-        {#        <!-- Harmonogram -->#}
-        {#        <div class="mb-12 p-6 bg-base-200 rounded-lg shadow-md">#}
-        {#            <h2 class="text-3xl font-semibold mb-4">Harmonogram</h2>#}
-        {#            <ul class="list-disc pl-6">#}
-        {#                {% for event in schedule %}#}
-        {#                    <li class="mb-2">#}
-        {#                        <span class="font-bold">{{ event.time }}</span> - {{ event.activity }}#}
-        {#                    </li>#}
-        {#                {% endfor %}#}
-        {#            </ul>#}
-        {#        </div>#}
-
-{#        <!-- Informacje o Prelegentach -->#}
-{#        <div class="mb-12 p-6 bg-base-200 rounded-lg shadow-md">#}
-{#            <h2 class="text-3xl font-semibold mb-4">Prelegenci</h2>#}
-{#            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">#}
-{#                {% for speaker in speakers %}#}
-{#                    <div class="card shadow-lg hover:shadow-2xl transition-shadow duration-300">#}
-{#                        <figure class="relative">#}
-{#                            <img src="{{ speaker.image }}" alt="{{ speaker.name }}" class="w-full h-48 object-cover rounded-t-lg">#}
-{#                        </figure>#}
-{#                        <div class="card-body p-4">#}
-{#                            <h3 class="text-xl font-bold mb-2">{{ speaker.name }}</h3>#}
-{#                            <p class="text-gray-700">{{ speaker.bio }}</p>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
-
-        {#        <!-- Informacje o Biletach -->#}
-        {#        <div class="mb-12 p-6 bg-base-200 rounded-lg shadow-md">#}
-        {#            <h2 class="text-3xl font-semibold mb-4">Bilety</h2>#}
-        {#            <div class="flex flex-col md:flex-row gap-6">#}
-        {#                {% for ticket in tickets %}#}
-        {#                    <div class="card shadow-lg hover:shadow-2xl transition-shadow duration-300 p-4">#}
-        {#                        <h3 class="text-xl font-bold mb-2">{{ ticket.type }}</h3>#}
-        {#                        <p class="text-gray-700 mb-4">{{ ticket.description }}</p>#}
-        {#                        <div class="text-2xl font-bold mb-2">{{ ticket.price }}</div>#}
-        {#                        <a href="{{ ticket.link }}" class="btn btn-primary">#}
-        {#                            Kup teraz#}
-        {#                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 ml-2">#}
-        {#                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>#}
-        {#                            </svg>#}
-        {#                        </a>#}
-        {#                    </div>#}
-        {#                {% endfor %}#}
-        {#            </div>#}
-        {#        </div>#}
-
-        <!-- Miejsce Wydarzenia -->
-        {#        <div class="mb-12 p-6 bg-base-200 rounded-lg shadow-md">#}
-        {#            <h2 class="text-3xl font-semibold mb-4">Miejsce Wydarzenia</h2>#}
-        {#            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">#}
-        {#                <div>#}
-        {#                    <h3 class="text-xl font-semibold">{{ location.name }}</h3>#}
-        {#                    <p class="text-gray-700">{{ location.address }}</p>#}
-        {#                    <p class="text-gray-700">{{ location.city }}</p>#}
-        {#                </div>#}
-        {#                <div class="w-full h-64">#}
-        {#                    <iframe src="{{ location.map_url }}" class="w-full h-full rounded-lg shadow-lg" style="border:0;" allowfullscreen="" loading="lazy"></iframe>#}
-        {#                </div>#}
-        {#            </div>#}
-        {#        </div>#}
-
-{#        <!-- Galeria -->#}
-{#        <div class="mb-12 p-6 bg-base-200 rounded-lg shadow-md">#}
-{#            <h2 class="text-3xl font-semibold mb-4">Zdjęcia</h2>#}
-{#            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">#}
-{#                {% for image in gallery %}#}
-{#                    <div class="w-full h-64">#}
-{#                        <img src="{{ image.url }}" alt="{{ image.alt }}" class="object-cover w-full h-full rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">#}
-{#                    </div>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
     </div>
 {% endblock %}

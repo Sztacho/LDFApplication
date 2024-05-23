@@ -9,7 +9,11 @@
     position: relative;
     min-height: 100vh;
     background: url('../images/smokbeztła.png') no-repeat bottom right;
-    background-size: 400px auto;
+    background-size: 800px auto;
+}
+
+.background-ldf {
+    background: radial-gradient(circle at bottom, #15191E , #00053a)
 }
 
 
@@ -49,4 +53,3 @@ html, body {
         text-shadow: 0 0 10px rgba(0, 175, 147);
     }
 }
-
