@@ -5,22 +5,8 @@
 @tailwind utilities;
 
 
-.background-image {
-    position: relative;
-    min-height: 100vh;
-    background: url('../images/smokbeztła.png') no-repeat bottom right;
-    background-size: 800px auto;
-}
-
 .background-ldf {
     background: radial-gradient(circle at bottom, #15191E , #00053a)
-}
-
-
-@media (max-width: 768px) {
-    .background-image {
-        background-size: 200px auto;
-    }
 }
 
 html, body {
